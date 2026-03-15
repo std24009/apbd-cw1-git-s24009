@@ -25,5 +25,10 @@ namespace LAB01
             
             Console.WriteLine(sum / values.Length);
         }
+        
+        void CalculateMax(int[] values)
+        {
+            Console.WriteLine("Najwieksza wartosc: " + values.Max());
+        }
     }
 }
