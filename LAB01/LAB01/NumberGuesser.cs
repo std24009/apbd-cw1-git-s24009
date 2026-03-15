@@ -4,13 +4,26 @@ public class NumberGuesser
 {
     public NumberGuesser()
     {
-        number = rnd.Next(1, 51);
+        misteryNum = rnd.Next(1, 51);
     }
     private Random rnd = new Random();
-    private int number;
+    private int misteryNum;
 
-    void TryToGuess()
+    public void TryToGuess()
     {
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        while (number != misteryNum)
+        {
+            if (number > misteryNum)
+                Console.WriteLine("Podana liczba jest za duza\n");
+            
+            if (number < misteryNum)
+                Console.WriteLine("Podana liczba jest za mala\n");
+
+            number = Convert.ToInt32(Console.ReadLine());
+        }
         
+        Console.WriteLine("Udalo sie!\nOdgadles liczbe\n");
     }
 }
